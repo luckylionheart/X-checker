@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="00d10252-5c8a-466d-beb3-db301be20e2a" name="Chigui" url="http://3.143.194.50">
+        <fileTransfer accessType="SFTP" host="3.143.194.50" port="22" sshConfigId="89620263-3698-45c9-8a4b-c288c804cc84" sshConfig="ubuntu@3.143.194.50:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

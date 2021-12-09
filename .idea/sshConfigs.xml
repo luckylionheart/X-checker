@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig host="3.143.194.50" id="89620263-3698-45c9-8a4b-c288c804cc84" keyPath="E:\projects\workana\autolab(peru)\ubuntukey.ppk" port="22" nameFormat="DESCRIPTIVE" username="ubuntu" />
+    </configs>
+  </component>
+</project>

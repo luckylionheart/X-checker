@@ -136,6 +136,7 @@ class CheckerApp(wx.Frame, listmix.ColumnSorterMixin):
             self.settings = pickle.load(f)
 
         self.SetSizeHintsSz(wx.DefaultSize, wx.DefaultSize)
+        self.SetTitle('X-checker')
 
         bSizer1 = wx.BoxSizer(wx.VERTICAL)
 
