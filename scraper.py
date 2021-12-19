@@ -11,16 +11,9 @@ from selenium.webdriver.support import expected_conditions as EC
 
 def check_website(url, proxies, row, log=None, headless=True):
     print(url)
-    if '.etix.' in url:
-        return Etix(url, proxies, row, log, headless)
-    elif '.eventbrite.' in url:
-        return Eventbrite(url, proxies, row, log, headless)
-    elif '.ticketfly.' in url:
-        return TicketFly(url, proxies, row, log, headless)
-    elif '.frontgatetickets.' in url:
-        return FrontGate(url, proxies, row, log, headless)
-    elif '.ticketweb.' in url:
-        return TicketWeb(url, proxies, row, log, headless)
+    if '.axs.' in url:
+        return Axs(url, proxies, row, log, headless)
+    
 
 
 class Scraper(object):
@@ -146,7 +139,7 @@ class Scraper(object):
         # return driver
 
 
-class Eventbrite(Scraper):
+class Axs(Scraper):
 
     def check_status_new_style(self, table, ret=0):
        
