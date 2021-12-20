@@ -1,0 +1,18 @@
+token = 7cf0b494e4c58a177cd070a64f6a6ef6306be0a86600
+
+https://shop.axs.com/?c=axs&e=drr200509os&t_locale=en-US
+
+new provided url
+
+http://shop.axs.com/?c=axs&e=7655900&t_locale=en-US
+
+http://shop.axs.com/?c=axs&e=57764958&t_locale=en-US&skin=showboxpresents&t_skin=showboxpresents
+-no ticket
+
+https://www.axs.com/events/406147/still-woozy-tickets
+https://www.axs.com/events/406151/still-woozy-tickets
+https://www.axs.com/events/406153/still-woozy-tickets
+https://www.axs.com/events/413987/lcd-soundsystem-tickets
+https://www.axs.com/events/413986/lcd-soundsystem-tickets
+https://www.axs.com/events/413989/lcd-soundsystem-tickets
+https://www.axs.com/events/413990/lcd-soundsystem-tickets
