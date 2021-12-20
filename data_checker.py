@@ -91,6 +91,7 @@ def check_axs(url):
             date = parser.parse(date.split('–')[0]).strftime('%Y-%m-%d')
     # print(f'date>>>>>>>{date}')
     # time.sleep(3000)
+    driver.quit()
     print("Add the Event on Google sheet.....")
     return name, date
 
