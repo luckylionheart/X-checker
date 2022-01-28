@@ -9,7 +9,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-def check_website(url, proxies, row, log=None, headless=True):
+def check_website(url, proxies, row, log=None, headless=False):
     print(url)
     if '.axs.' in url:
         return Axs(url, proxies, row, log, headless)
@@ -18,7 +18,7 @@ def check_website(url, proxies, row, log=None, headless=True):
 
 class Scraper(object):
 
-    def __init__(self, url, proxies, rows, log=None, headless=True):
+    def __init__(self, url, proxies, rows, log=None, headless=False):
         self.log = log
         self.log_text('Checking URL: {} Rows: {}'.format(url, rows))
         with open(proxies, 'r') as f:
@@ -44,7 +44,7 @@ class Scraper(object):
 
     def open_driver(self, use_proxy=True,
                     user_agent='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36.',
-                    headless=True):
+                    headless=False):
         random_proxy = random.choice(self.proxies)
         auth, ip_port = random_proxy.split('@')
         user, pwd = auth.split(':')
@@ -101,17 +101,22 @@ class Scraper(object):
         );
         """ % (ip, port, user, pwd)
         chrome_options = webdriver.ChromeOptions()
-        # if headless:
+        if headless:
+            pass
         #    chrome_options.add_argument('--headless')
-        # if use_proxy:
-        #     pluginfile = 'proxy_auth_plugin.zip'
-        
-        #     with zipfile.ZipFile(pluginfile, 'w') as zp:
-        #         zp.writestr("manifest.json", manifest_json)
-        #         zp.writestr("background.js", background_js)
-        #     chrome_options.add_extension(pluginfile)
-        # if user_agent:
-        #     chrome_options.add_argument('--user-agent=%s' % user_agent)
+        if use_proxy:
+            pluginfile = 'proxy_auth_plugin.zip'
+            with zipfile.ZipFile(pluginfile, 'w') as zp:
+                zp.writestr("manifest.json", manifest_json)
+                zp.writestr("background.js", background_js)
+            chrome_options.add_extension(pluginfile)
+            time.sleep(1)
+        chrome_options.add_extension("TBL_AXS_Extension.zip")
+        time.sleep(3000)
+        if user_agent:
+            chrome_options.add_argument('--user-agent=%s' % user_agent)
+        if user_agent:
+            chrome_options.add_argument('--user-agent=%s' % user_agent)
         try:
             # chrome_options.add_argument('--headless')
             driver = webdriver.Chrome('chromedriver', chrome_options=chrome_options)
@@ -173,7 +178,7 @@ class Axs(Scraper):
             
         except:
             self.driver.quit()
-            self.driver = self.open_driver(headless=True)
+            self.driver = self.open_driver(headless=False)
             return self.check_status(ret)
         try:
            
